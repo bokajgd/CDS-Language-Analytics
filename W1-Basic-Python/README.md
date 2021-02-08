@@ -13,7 +13,7 @@ The final cleaned data can be found in the file *cleaned_data.csv*<br/>
 
 # Download folder locally
 To locally download a compressed zip version of this folder in order to run the script, go to http://kinolien.github.io/gitzip/
-and add copy the URL (https://github.com/bokajgd/CDS-Language-Analytics/tree/main/W1-Basic-Python) into address bar. Then click download. 
+and add copy the URL (https://github.com/bokajgd/CDS-Language-Analytics/tree/main/W1-Basic-Python) into address bar. Then click the key and add the API access token *2c08e187118874e05df987a975d8842ca7e90cf7*. Finally, click download. 
 <br>
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
