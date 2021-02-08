@@ -1,6 +1,5 @@
 # W1 - Basic Scripting with Python
 
- 
 # Overview 
 
 **Jakob Grøhn Damgaard, Feburary 2021** <br/>
@@ -14,6 +13,8 @@ The final cleaned data can be found in the file *cleaned_data.csv*<br/>
 # Download folder locally
 To locally download a compressed zip version of this folder in order to run the script, go to http://kinolien.github.io/gitzip/
 and add copy the URL (https://github.com/bokajgd/CDS-Language-Analytics/tree/main/W1-Basic-Python) into address bar. Then click the key and add the API access token *a11a93a66afff2579401f3e9199a80425b21a3d4* and press enter. Finally, click download. 
+<br>
+Alternatively, if this does not work, one can zip the entire repository from GitHub by navigating back to the home page of the repository and clicking the *Code* button and then *Download ZIP*
 <br>
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
