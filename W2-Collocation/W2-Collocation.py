@@ -20,7 +20,7 @@ These parameters can be defined in the script itself
 '''
 Shortcomings of this script:
 - The current function concatenates all text files before calculating relevant scores. Therefore, the 'window' slides across the boundaries of each text which is not optimal.
-- What if collocate appears multiple times in a given window? 
+- What if a collocate appears multiple times in a given window? 
 '''
 
 # Defining main function 
@@ -54,7 +54,6 @@ class Collocation:
 
             O11 = self.get_O11(tokenized_text, self.keyword , collocate, self.window_size)  # Joint frequency of keyword and collocate
 
-            R1 = self.get_raw_frequency(tokenized_text, self.keyword) # Calculating R1: Raw frequency of keyword
             C1 = collocate_raw_frequency  # Calculating: Same as raw frequency of collocate
 
             N = len(tokenized_text)  # O11 + O12 + O21 + O22
@@ -150,7 +149,7 @@ class Collocation:
                     collocates.extend(total_window) # Add all collocates from window to the full list of collocates
 
             unique_collocates = pd.unique(collocates) # Only keep one of each unique collocate
-            R1 = len(collocates)
+            R1 = len(collocates) # Number of all collocates in each window combined
 
             return unique_collocates, R1
 
