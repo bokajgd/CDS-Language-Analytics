@@ -8,10 +8,10 @@ This repository contains the W2 assigmnent for the course *Language Analytics*
 # Code
 The raw data files can be found in *data* > *100_english_novels* > *corpus*<br/>
 The code to execute the tasks can be found in the file *W1-Collocation.py*<br/>
-The final cleaned data files produced by this script can be found in the folder *output.csv*<br/>
+The final cleaned data files produced by this script can be found in the folder *output*<br/>
 The filename of each produced file contains the keyword and the window size. <br>
 
-# Download folder locally
+# Download and execute
 To locally download a compressed zip version of this repository, one can zip the entire repository from GitHub by navigating back to the home page of the repository and clicking the *Code* button and then *Download ZIP*. <br/>
 <br>
 Before executing the .py file, open the terminal, navigate the directory to the folder directory and run the following code to install the requirements list in the *requirements.txt* file:
