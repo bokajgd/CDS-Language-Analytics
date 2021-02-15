@@ -1,14 +1,15 @@
-# W1 - Basic Scripting with Python
+# W2 - Word Collocation
 
 # Overview 
 
 **Jakob Grøhn Damgaard, Feburary 2021** <br/>
-This repository contains the W1 assigmnent for the course *Language Analytics*
+This repository contains the W2 assigmnent for the course *Language Analytics*
 
 # Code
 The raw data files can be found in *data* > *100_english_novels* > *corpus*<br/>
-The code to execute the tasks can be found in the file *W1-Basic-Scripting.py*<br/>
-The final cleaned data can be found in the file *cleaned_data.csv*<br/>
+The code to execute the tasks can be found in the file *W1-Collocation.py*<br/>
+The final cleaned data files produced by this script can be found in the folder *output.csv*<br/>
+The filename of each produced file contains the keyword and the window size. <br>
 
 # Download folder locally
 To locally download a compressed zip version of this repository, one can zip the entire repository from GitHub by navigating back to the home page of the repository and clicking the *Code* button and then *Download ZIP*. <br/>
@@ -18,6 +19,8 @@ Before executing the .py file, open the terminal, navigate the directory to the 
 ```bash
 pip install -r requirements.txt
 ```
+<br>
+It is recommend that you create and activate a virtual environment in the project folder before installing the requirements and running the script. 
 
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
