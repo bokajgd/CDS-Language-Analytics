@@ -24,7 +24,7 @@ source env/bin/activate
 pip install -r requirements.txt
 deactivate
 ```
-<br>
+
 You can then proceed to run the script in the terminal by running the following line: 
 
 ```bash
