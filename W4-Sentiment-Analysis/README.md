@@ -26,19 +26,12 @@ deactivate
 ```
 <br>
 You can then proceed to run the script in the terminal by running the following line: 
+
 ```bash
 python W4-Sentiment-Analysis.py --filename test_data.csv
 ```
 If you wish to run the script on the entire data set, change *test_data.csv* to *abcnews-date-text.csv* in the lines above.
-=======
-<br>
 
-```bash
-python W4-Sentiment-Analysis.py --filename test_data.csv
-```
-
-<br>
->>>>>>> main
 
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
