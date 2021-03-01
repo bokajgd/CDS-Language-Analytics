@@ -35,13 +35,16 @@ class Sentiment:
         if self.filename is None: # If no filename is specified, use test_data.csv as default file
             self.filename = "test_data.csv"
 
-
         df = pd.read_csv(data_dir / f'{self.filename}')  # Read csv file
-        df["Polarity"] = self.get_polarity_score(text = df["headline_text"])
+        df["Polarity"] = self.get_polarity_score(text = df["headline_text"]) # Adding a column with calculated polarity scores for each headline
 
-        write_path = out_dir / "test.csv" # Path for csv file 
+        df_grouped_daily = df.groupby('publish_date', as_index=False)['Polarity'].mean() # Grouping headlines and calculating a mean polarity score for each day
+        
+        self.create_plot(out_dir = out_dir, data = df_grouped_daily['Polarity'].rolling(7).mean(), plot_name = "1_Week_Rolling_Average_Polarity")
 
-        df.to_csv(write_path)
+        self.create_plot(out_dir = out_dir, data = df_grouped_daily['Polarity'].rolling(30).mean(), plot_name = "1_Month_Rolling_Average_Polarity")
+
+        print(df_grouped_daily.head(20))
 
     # Defining function for setting directory for the raw data
     def setting_data_directory(self):
@@ -68,6 +71,7 @@ class Sentiment:
 
     '''
     def get_polarity_score(self, text):
+        #
         nlp = spacy.load("en_core_web_sm")
 
         spacy_text_blob = SpacyTextBlob()
@@ -78,10 +82,29 @@ class Sentiment:
 
         for headline in nlp.pipe(text):
             polarity_score = headline._.sentiment.polarity 
-            polarity.append(polarity_score)
+            polarity.append(float(polarity_score))
 
         return polarity
 
+
+    # Defining function for creating a plot of development in sentiment scores 
+    def create_plot(self, out_dir, data, plot_name):
+
+        plt.plot(data, label="Rolling Average Polarity")
+
+        plt.title(plot_name)
+
+        plt.legend(loc='upper right')
+
+        plt.xlabel('Date')
+
+        plt.ylabel('Polarity')
+
+        path = out_dir / f"{plot_name}.png"
+
+        plt.savefig(path)
+
+        plt.close()
 
 # Executing main function when script is run
 if __name__ == '__main__':
