@@ -1,26 +1,33 @@
-# W2 - Word Collocation
+# W4 - Sentiment Analysis
 
 # Overview 
 
-**Jakob Grøhn Damgaard, Feburary 2021** <br/>
-This repository contains the W2 assigmnent for the course *Language Analytics*
+**Jakob Grøhn Damgaard, March 2021** <br/>
+This repository contains the W4 assigmnent for the course *Language Analytics*
 
 # Code
-The raw data files can be found in *data* > *100_english_novels* > *corpus*<br/>
-The code to execute the tasks can be found in the file *W1-Collocation.py*<br/>
-The final cleaned data files produced by this script can be found in the folder *output*<br/>
-The filename of each produced file contains the keyword and the window size. <br>
+The raw data files can be found in the *data* folder. This folder includes the full data set *abcnews-date-text.csv* and and a subset called *test_data.csv* which contains the first 20000 headlines. <br/>
+The code to execute the tasks can be found in the file *W4-Sentiment-Analysis.py*<br/>
+The two plots roduced by this script can be found in the folder *output*<br/>
 
-# Download and execute
+# Download and Execute
 To locally download a compressed zip version of this repository, one can zip the entire repository from GitHub by navigating back to the home page of the repository and clicking the *Code* button and then *Download ZIP*. <br/>
 <br>
-Before executing the .py file, open the terminal, navigate the directory to the folder directory and run the following code to install the requirements list in the *requirements.txt* file:
+Before executing the .py file, open the terminal, navigate the directory to the folder directory and run the following code to install the requirements list in the *requirements.txt* file in a virtual environment:
 <br>
 ```bash
+python3 -m venv env
+source env/bin/activate
 pip install -r requirements.txt
+deactivate
 ```
 <br>
-It is recommend that you create and activate a virtual environment in the project folder before installing the requirements and running the script. 
+You can then proceed to run the script in the terminal by running the following line: 
+<br>
+```bash
+python W4-Sentiment-Analysis.py --filename test_data.csv
+```
+<br>
 
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
