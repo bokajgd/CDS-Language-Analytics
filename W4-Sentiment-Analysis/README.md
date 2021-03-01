@@ -24,9 +24,11 @@ deactivate
 <br>
 You can then proceed to run the script in the terminal by running the following line: 
 <br>
+
 ```bash
 python W4-Sentiment-Analysis.py --filename test_data.csv
 ```
+
 <br>
 
 # License
