@@ -19,7 +19,7 @@ It should also create a data frame showing the degree, betweenness, and eigenvec
 def main(args):
     # Adding arguments that can be specified in command line
     edgefile = args.fn 
-    n_edges = args.nn 
+    n_edges = args.ne 
 
     NetworkAnalysis(edgefile = edgefile, n_edges = n_edges),  # Calling main class 
 
@@ -87,7 +87,12 @@ class NetworkAnalysis:
         # Generating network graph
         graph = nx.from_pandas_edgelist(filtered_df, 'nodeA', 'nodeB', ["weight"])        
 
-        pos = nx.draw_shell(graph, with_labels = True, font_weight= 'bold', font_color = "#9F955F")
+        pos = nx.draw_shell(graph,
+                            with_labels = True, 
+                            font_weight= 'bold', 
+                            font_color = "#2A2925",
+                            edge_color = "#2A2925",
+                            node_color = "#BF7B1F")
         
         # Save graph
         graph_path = out_dir / "network.png" # Output path for graph
@@ -129,10 +134,10 @@ if __name__ == '__main__':
                         help='The name of the input edgefile',
                         required=False)
 
-    parser.add_argument('--nn',
-                        metavar="Number of nodes",
+    parser.add_argument('--ne',
+                        metavar="Number of edges",
                         type=int,
-                        help='The number of nodes to keep in the network.',
+                        help='The number of edges to keep in the network.',
                         required=False,
                         default=50)
 

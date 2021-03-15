@@ -1,17 +1,14 @@
-# W4 - Sentiment Analysis
+# W6 - Network Analysis
 
 # Overview 
 
 **Jakob Grøhn Damgaard, March 2021** <br/>
-This repository contains the W4 assigmnent for the course *Language Analytics*
-
-# Sentiment Trends in the Headlines
-It is difficult to draw any major conclusions or inferences, When eyeballing the plots displaying the rolling weekly and monthly averages in headline polarity scores. However, both plots display a slight dip in average scores during the first decaded which is subsequently followed up by a steady increase starting around 2010. It could be speculated that this rise may be a result of a surge in use of social media. The prevalence of these platforms may have pushed news media towards the use of more sensational headlines. Lastly, there seems to be a steep spike in average scores during 2020 which might be attributed to the Covid-19 pandemic.
+This repository contains the W6 assigmnent for the course *Language Analytics*
 
 # Code
-The raw data files can be found in the *data* folder. This folder includes the full data set *abcnews-date-text.csv* and and a subset called *test_data.csv* which contains the first 20000 headlines. <br/>
-The code to execute the tasks can be found in the file *W4-Sentiment-Analysis.py*<br/>
-The two plots roduced by this script can be found in the folder *output*<br/>
+The raw data files can be found in the *data* folder. This folder includes the default edgefile *edges_df.csv* which the script has been tested on. <br/>
+The code to execute the tasks can be found in the file *W6-Network-Analysis.py*<br/>
+The plot and csv file produced by this script when using the default edgefile can be found in the folder *output*<br/>
 
 # Download and Execute
 To locally download a compressed zip version of this repository, one can zip the entire repository from GitHub by navigating back to the home page of the repository and clicking the *Code* button and then *Download ZIP*. <br/>
@@ -28,10 +25,9 @@ deactivate
 You can then proceed to run the script in the terminal by running the following line: 
 
 ```bash
-python W4-Sentiment-Analysis.py --filename test_data.csv
+python W6-Sentiment-Analysis.py --fn edges_df.csv --ne 50
 ```
-If you wish to run the script on the entire data set, change *test_data.csv* to *abcnews-date-text.csv* in the lines above.
-
+Notice that you can change the name of the input file if you wish to analyse a different edgefile as well as the number of edges to keep in the final plot. Feel free to play around with the number 
 
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
