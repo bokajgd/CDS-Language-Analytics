@@ -25,7 +25,7 @@ deactivate
 You can then proceed to run the script in the terminal by running the following line: 
 
 ```bash
-python W6-Sentiment-Analysis.py --fn edges_df.csv --ne 50
+python W6-Network-Analysis.py --fn edges_df.csv --ne 50
 ```
 Notice that you can change the name of the input file if you wish to analyse a different edgefile as well as the number of edges to keep in the final plot. Feel free to play around with the number 
 
