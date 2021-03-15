@@ -89,11 +89,14 @@ class NetworkAnalysis:
 
         pos = nx.draw_shell(graph,
                             with_labels = True, 
-                            width = filtered_df['weight']/1500, # Weighting the width of the edges by their weight
+                            width = filtered_df['weight']/2500, # Weighting the width of the edges by their weight
                             font_weight= 'bold', 
-                            font_color = "#2A2925",
-                            edge_color = "#2A2925",
-                            node_color = "#BF7B1F")
+                            edge_cmap = plt.cm.hsv,
+                            edge_color = filtered_df['weight'], # Changing line colour according to weight - unfortunately I couldn't add a colorbar but it still looks kinda cool
+                            font_color = "#2A2925", 
+                            font_size = 6,
+                            node_color = "#BD7575",
+                            node_size = 150)
         
         # Save graph
         graph_path = out_dir / "network.png" # Output path for graph
