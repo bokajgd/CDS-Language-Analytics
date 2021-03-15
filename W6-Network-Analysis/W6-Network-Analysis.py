@@ -89,6 +89,7 @@ class NetworkAnalysis:
 
         pos = nx.draw_shell(graph,
                             with_labels = True, 
+                            width = filtered_df['weight']/1500, # Weighting the width of the edges by their weight
                             font_weight= 'bold', 
                             font_color = "#2A2925",
                             edge_color = "#2A2925",
