@@ -13,7 +13,7 @@ One study estimates that expenses for unplanned readmissions yearly exceed $17 b
 <br>
 Following flowchart displays the preprocessing steps from the raw data input to the final cleaned training, testing and validation data sets. Several seperate datasets must be merged in order to create a dataset with meaningful readmission labels. The training data set is used to train the final classification model. The validation dataset is used to explore which neural network structure yields the highest possibel AUC-ROC score (automated hyperband search (Li et al., 2016) performed using kerastuneR package - this script is not included in this repository). This exploration found that a simple, single layered network with a binary sigmoid output node (akin to logistic regression) provided the best results. After training, the predictive performance of the model is tested using the test set. See the *data_preprocessing.py* script for the full preprocessing workflow and comments on the decisions made througout the process.
 
-![](viz/preprocessing.png =400x)
+![](viz/preprocessing.png)
 
 
 ## MIMIC-III Dataset
