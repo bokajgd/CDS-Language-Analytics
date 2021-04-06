@@ -1,7 +1,7 @@
 # W10 - Supervised Learning 
 
 
-**Jakob Grøhn Damgaard, March 2021** <br/>
+**Jakob Grøhn Damgaard, April 2021** <br/>
 This repository contains the W10 assigmnent for the course *Language Analytics*
 
 # Predicting Unplanned Readmissions using Clinical Discharge Notes 
