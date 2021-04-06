@@ -22,21 +22,22 @@ from sklearn.preprocessing import LabelBinarizer
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.under_sampling import RandomUnderSampler
 
-# **Preprocessing and preperation of data**
+'''
+ Preprocessing and preperation of data:
 
-# The purpose of this script is to prepare and preproces the raw textual data and the admission data needed for training and testing the classification model. This proces includes the following steps:
+The purpose of this script is to prepare and preproces the raw textual data and the admission data needed for training and testing the classification model. This proces includes the following steps:
 
-# 1. Clean and prepare admission data
-# 2. Extract discharge summaries from note data
-# 3. Remove newborn cases and in-hospital deaths
-# 4. Bind note-data to 30-day readmission information
-# 5. Split into train, validation and test set and balance training data by oversampling positive cases
-# 6. Removal of special characters, numbers and de-identified brackets
-# 7. Vectorise all discharge notes:
-#   7a.  Remove stop-words, most common words and very rare words (benchmarks need to be defined)
-#   7b. Create set of TF-IDF weighted tokenised discharge notes
-# 8. Output datasets and labels as CSV-files
-
+1. Clean and prepare admission data
+2. Extract discharge summaries from note data
+3. Remove newborn cases and in-hospital deaths
+4. Bind note-data to 30-day readmission information
+5. Split into train, validation and test set and balance training data by oversampling positive cases
+6. Removal of special characters, numbers and de-identified brackets
+7. Vectorise all discharge notes:
+   7a.  Remove stop-words, most common words and very rare words (benchmarks need to be defined)
+   7b. Create set of TF-IDF weighted tokenised discharge notes
+8. Output datasets and labels as CSV-files
+'''
 
 # Defining main function
 def main(args):
@@ -243,7 +244,7 @@ class NotePreprocessing:
 
         root_dir = Path.cwd()  # Setting root directory
 
-        data_dir = root_dir / 'W6-Network-Analysis' / 'data'   # Setting data directory
+        data_dir = root_dir / 'W10-Supervised-Learning' / 'data'   # Setting data directory
 
         return data_dir
 
@@ -253,7 +254,7 @@ class NotePreprocessing:
 
         root_dir = Path.cwd()  # Setting root directory
 
-        out_dir = root_dir / 'W6-Network-Analysis' / 'output' # Setting output directory
+        out_dir = root_dir / 'W10-Supervised-Learning' / 'output' # Setting output directory
 
         return out_dir
 
