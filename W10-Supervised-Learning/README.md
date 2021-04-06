@@ -1,7 +1,9 @@
 # W10 - Supervised Learning 
 
+# Please wait an hour for final scripts
+
 **Jakob Grøhn Damgaard, March 2021** <br/>
-This repository contains the W6 assigmnent for the course *Language Analytics*
+This repository contains the W10 assigmnent for the course *Language Analytics*
 
 # Predicting Unplanned Readmissions using Clinical Discharge Notes 
 
@@ -24,6 +26,7 @@ Code for the supervised logistic regression classifier can be found in the *read
 
 ## Results
 The logistic regression classifier trained on raw TF-IDF vectors yields an AUC-ROC of 0.706, recall of 0.556 and a precision of 0.123 and overall accuracy of 0.71. <br/> 
+<br/>
 The graph below shows the AUC-ROC curve for the classifier:
 
 ![](viz/roc_curve.png)
@@ -33,7 +36,7 @@ The graph below shows the AUC-ROC curve for the classifier:
 It would be interesting to extract the most impactful tokens from the input layer to the logistic regression classifier to examine which words are important for predicting readmission. Is it medicine dosages or perhaps symptoms that are the most significant indicators of readmission?
 
 ## Download and Execute
-Unfortuenately, the MIMIC-III is restricted and access to the data requires authorisation. Therefore, I am unable to share the data publicly in the folder and the code is, thus, not runnable on your machine. Please read through the code using the commenting as assistance for understanding the steps taken to complete the preprocessing and the supervised logistic regression classification model.
+Unfortunately, the MIMIC-III is restricted and access to the data requires authorisation. Therefore, I am unable to share the data publicly in the folder and the code is, thus, not runnable on your machine. Please read through the code using the commenting as assistance for understanding the steps taken to complete the preprocessing and the supervised logistic regression classification model.
 
 ## Sources
 - Jensen, P. B., Jensen, L. J., & Brunak, S. (2012). Mining electronic health records: Towards better research
