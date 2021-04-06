@@ -1,5 +1,6 @@
 # W10 - Supervised Learning 
 
+
 **Jakob Grøhn Damgaard, March 2021** <br/>
 This repository contains the W10 assigmnent for the course *Language Analytics*
 
@@ -12,7 +13,7 @@ One study estimates that expenses for unplanned readmissions yearly exceed $17 b
 <br>
 Following flowchart displays the preprocessing steps from the raw data input to the final cleaned training, testing and validation data sets. Several seperate datasets must be merged in order to create a dataset with meaningful readmission labels. The training data set is used to train the final classification model. The validation dataset is used to explore which neural network structure yields the highest possibel AUC-ROC score (automated hyperband search (Li et al., 2016) performed using kerastuneR package - this script is not included in this repository). This exploration found that a simple, single layered network with a binary sigmoid output node (akin to logistic regression) provided the best results. After training, the predictive performance of the model is tested using the test set. See the *data_preprocessing.py* script for the full preprocessing workflow and comments on the decisions made througout the process.
 
-![](viz/preprocessing.png)
+![](viz/preprocessing.png =400x)
 
 
 ## MIMIC-III Dataset
@@ -23,7 +24,10 @@ The code to used to perform the initial preprocessing of the data can be found i
 Code for the supervised logistic regression classifier can be found in the *readmission_prediction.py* script<br/>
 
 ## Results
-The logistic regression classifier trained on raw TF-IDF vectors yields an AUC-ROC of 0.706, recall of 0.556 and a precision of 0.123 and overall accuracy of 0.71. <br/> 
+The logistic regression classifier trained on raw TF-IDF vectors yields an AUC-ROC of 0.706, recall of 0.556 and a precision of 0.123 and overall accuracy of 0.71. As the test data (and real world scenarios) are highly imbalanced and contain very few positive instances, it is not meaningful to interpret the overall accuracy. Model prediction performance is mainly evaluated using the AUC-ROC score. This is the primary evaluation metric of many other readmission prediction publications (Rajkomar et al. 2018, Craig et al., 20177) and, hence, enables for convenient model comparisons. The score is designed to measure how well a model discriminates between positive and negative instances (Fawcett, 2006). As it is insensitive to class imbalance, it is regularly used when dealing with skewed data in binary prediction where basic accuracy evaluation would be worthless (Jeni et al., 2013). <br/> 
+<br/>
+The performance results may appear weak at first peek but one must keep in mind that this is a classification task that is impossible to perfect. Though many readmissions are potentially avoidable, most are intrinsically spontaneous and impossible to foresee without the aid of a quantum-precise mapping of the universe. 
+Generally, the model performs similarly to related work on predicting unplanned readmissions using discharge summaries; Craig et al. (2017) report an AUC-SCORE of 0.71.
 <br/>
 The graph below shows the AUC-ROC curve for the classifier:
 
@@ -50,9 +54,14 @@ https://doi.org/10.1056/NEJMsa0803563 <br/>
 - Johnson, A. E. W., Pollard, T. J., Shen, L., Lehman, L. H., Feng, M., Ghassemi, M., Moody, B., Szolovits, P.,
 Anthony Celi, L., & Mark, R. G. (2016). MIMIC-III, a freely accessible critical care database.
 Scientific Data, 3. https://doi.org/10.1038/sdata.2016.35 <br/>
-- Goldberger Ary L., Amaral Luis A. N., Glass Leon, Hausdorff Jeffrey M., Ivanov Plamen Ch., Mark Roger G., Mietus Joseph E., Moody George B., Peng Chung-Kang, & Stanley H. Eugene. (2000). PhysioBank, PhysioToolkit, and PhysioNet. Circulation, 101(23), e215–e220. https://doi.org/10.1161/01.CIR.101.23.e215
-<br/>
-
+- Goldberger Ary L., Amaral Luis A. N., Glass Leon, Hausdorff Jeffrey M., Ivanov Plamen Ch., Mark Roger G., Mietus Joseph E., Moody George B., Peng Chung-Kang, & Stanley H. Eugene. (2000). PhysioBank, PhysioToolkit, and PhysioNet. Circulation, 101(23), e215–e220. https://doi.org/10.1161/01.CIR.101.23.e215<br/>
+- Rajkomar, A., Oren, E., Chen, K., Dai, A. M., Hajaj, N., Hardt, M., Liu, P. J., Liu, X., Marcus, J., Sun, M.,
+Sundberg, P., Yee, H., Zhang, K., Zhang, Y., Flores, G., Duggan, G. E., Irvine, J., Le, Q., Litsch, K., ... Dean, J. (2018). Scalable and accurate deep learning with electronic health records. Npj Digital Medicine, 1(1), 1–10. https://doi.org/10.1038/s41746-018-0029-1 <br/>
+- Jeni, L. A., Cohn, J. F., & De La Torre, F. (2013). Facing imbalanced data—Recommendations for the use of
+performance metrics. 2013 Humaine Association Conference on Affective Computing and Intelligent
+Interaction, 245–251. https://doi.org/10.1109/ACII.2013.47 <br/>
+- Craig, E., Arias, C., & Gillman, D. (2017). Predicting readmission risk from doctors’ notes. ArXiv:1711.10663 [Stat]. http://arxiv.org/abs/1711.10663 <br/>
+- Fawcett, T. (2006). An introduction to ROC analysis. Pattern Recognition Letters, 27(8), 861–874. https://doi.org/10.1016/j.patrec.2005.10.010 <br/>
  
 # License
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
